@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@300;400;500;700;900&display=swap');
 
 * {
@@ -48,6 +47,37 @@ body {
 
 }
 
+.load-btn {
+  &:hover {
+    background-color: #535353;
+  }
+
+  svg {
+    margin-right: 5px;
+  }
+
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  padding:19px 45px;
+  margin: 0 auto;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #F2F2F2;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 625px) {
+  .load-btn {
+    margin-top: 30px;
+    padding: 1.5rem 4rem;
+  }
+}
 
 
 .btn-big {
@@ -67,6 +97,7 @@ body {
   position: relative;
 
 }
+
 .e-mail__container {
   display: flex;
   align-items: center;

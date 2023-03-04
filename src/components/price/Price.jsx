@@ -7,8 +7,9 @@ import ss3 from '../../images/ss3.png'
 import Logo from '../../images/Logo.png'
 import m1 from '../../images/m1.png'
 import m2 from '../../images/m2.png'
+import { NavLink } from 'react-router-dom';
 
-function Price() {
+function Price({setNavOpened}) {
     const style = [
         {
             style: "Минимализм",
@@ -161,14 +162,16 @@ function Price() {
                                         <button className='questions__end-btn'>Оставить заявку</button>
                                     </div>
                                     <div className="questions__end-links">
-                                        <div className="questions__itemList">
-                                            <div className="questions__itemList-inner">
-                                                <img className='questions__itemList-img' src={m1} alt="Каталог работ" />
-                                                <img className='questions__itemList-logo' src={Logo} alt="Каталог работ" />
-                                                <hp className='questions__itemList-desc' >Каталог работ</hp>
+                                        <NavLink to="/projects">
+                                            <div onClick={() => setNavOpened(false)} className="questions__itemList">
+                                                <div className="questions__itemList-inner">
+                                                    <img className='questions__itemList-img' src={m1} alt="Каталог работ" />
+                                                    <img className='questions__itemList-logo' src={Logo} alt="Каталог работ" />
+                                                    <hp className='questions__itemList-desc' >Каталог работ</hp>
+                                                </div>
+                                                <h6 className='questions__itemList-title' >Каталог работ</h6>
                                             </div>
-                                            <h6 className='questions__itemList-title' >Каталог работ</h6>
-                                        </div>
+                                        </NavLink>
                                         <div className="questions__itemList">
                                             <div className="questions__itemList-inner">
                                                 <img className='questions__itemList-img' src={m2} alt="Каталог работ" />

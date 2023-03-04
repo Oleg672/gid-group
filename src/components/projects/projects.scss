@@ -126,30 +126,7 @@
   
     }
   
-    &__load {
-      &:hover {
-        background-color: #535353;
-      }
-  
-      svg {
-        margin-right: 5px;
-      }
-  
-      border: 1px solid black;
-      display: flex;
-      align-items: center;
-      background-color: black;
-      padding:19px 45px;
-      margin: 0 auto;
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 300;
-      font-size: 24px;
-      line-height: 28px;
-      text-align: center;
-      color: #F2F2F2;
-      cursor: pointer;
-    }
+    
   }
 
 
@@ -230,7 +207,7 @@
 
 
 @media screen and (max-width: 625px) {
-  
+
 
     .projects {
 
@@ -273,10 +250,7 @@
             justify-content: space-between;
         }
 
-        &__load {
-            margin-top: 30px;
-            padding: 1.5rem 4rem;
-        }
+        
 
     }
 }

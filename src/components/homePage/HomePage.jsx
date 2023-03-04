@@ -10,7 +10,7 @@ import Quality from '../../components/quality/Quality';
 import Services from '../../components/services/Services';
 import Home from '../../components/home/Home';
 
-function HomePage({ projects }) {
+function HomePage({ projects, setNavOpened }) {
     const [workMap, setWorkMap] = useState();
     const [instagram, setInstagram] = useState();
     const experienceData = [
@@ -67,13 +67,13 @@ function HomePage({ projects }) {
         <>
             <Home />
             <Expetience experienceData={experienceData}/>
-            <Price />
+            <Price setNavOpened={setNavOpened}/>
             <Services />
             {projects ? <Projects projects={projects} /> : null}
             {workMap ? <MapWork workMap={workMap} /> : null}
             <Quality />
             {instagram ? <Instagram instagram={instagram} /> : null}
-            <Catalog />
+            <Catalog title={"ПОЛУЧИТЕ КАТАЛОГ НАШИХ ПРОЕКТОВ"}/>
             <Footer />
         </>
     );

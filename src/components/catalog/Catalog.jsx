@@ -1,10 +1,10 @@
 import React from 'react';
 import img1 from '../../images/12.png'
 import './catalog.scss'
-function Catalog() {
+function Catalog({title}) {
     return (
         <section className="catalog">
-            <h2 className="section-title">ПОЛУЧИТЕ КАТАЛОГ НАШИХ ПРОЕКТОВ</h2>
+            <h2 className="section-title">{title}</h2>
             <div className="catalog__container">
                 <div className="catalog__img-wrapp">
                     <img className='catalog__img' src={img1} alt="catalog-img" />
