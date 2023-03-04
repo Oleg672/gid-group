@@ -1,0 +1,49 @@
+.helpRequest {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #BDBDBD;
+    border-top: 1px solid #BDBDBD;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    &__inner {
+        padding: 110px 0;
+        margin: 0 auto;
+        max-width: 1728px;
+        background-color: #F2F2F2;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    &__title {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 146.69%;
+        color: #000000;
+        max-width: 623px;
+    }
+
+    &__btn {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+        color: #F2F2F2;
+        border: none;
+        background-color: black;
+        padding: 30px 0;
+        max-width: 677px;
+        width: 100%;
+        cursor: pointer;
+        &:hover{
+            // background-color: #535353;
+        }
+    }
+}
