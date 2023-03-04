@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/gid-group/static/css/main.9ee92fe0.css",
-    "main.js": "/gid-group/static/js/main.7f34870e.js",
+    "main.css": "/gid-group/static/css/main.60a5f073.css",
+    "main.js": "/gid-group/static/js/main.a1c014d9.js",
     "static/js/787.296da6e0.chunk.js": "/gid-group/static/js/787.296da6e0.chunk.js",
     "static/media/8.png": "/gid-group/static/media/8.ce6ca602d4f7fb63cf5c.png",
     "static/media/top11.png": "/gid-group/static/media/top11.177e3f033e08fae87246.png",
@@ -11,6 +11,7 @@
     "static/media/2.png": "/gid-group/static/media/2.7931d9316530d44231f6.png",
     "static/media/3.png": "/gid-group/static/media/3.6d21a93130fe980d25ab.png",
     "static/media/5.png": "/gid-group/static/media/5.71b75a7c565820c1dbb3.png",
+    "static/media/work.png": "/gid-group/static/media/work.4555afb518fda36ea246.png",
     "static/media/12.png": "/gid-group/static/media/12.9872cc0f08d583745e1e.png",
     "static/media/7.png": "/gid-group/static/media/7.6caf3df67e7bcca5b359.png",
     "static/media/11.png": "/gid-group/static/media/11.3644d812defc1581609b.png",
@@ -27,14 +28,18 @@
     "static/media/ss1.png": "/gid-group/static/media/ss1.aa6bef158d480737ef6f.png",
     "static/media/m1.png": "/gid-group/static/media/m1.71516d55804f124014de.png",
     "static/media/m2.png": "/gid-group/static/media/m2.30b17dc94576c9d18283.png",
+    "static/media/team3.png": "/gid-group/static/media/team3.d0ac3091e2f260919439.png",
+    "static/media/team2.png": "/gid-group/static/media/team2.49c5c93cc501e1859570.png",
+    "static/media/team1.png": "/gid-group/static/media/team1.a352fe29024bffc8dba8.png",
+    "static/media/team4.png": "/gid-group/static/media/team4.ce6387c3c97cf8043737.png",
     "index.html": "/gid-group/index.html",
     "static/media/checked.svg": "/gid-group/static/media/checked.7f6f5f5c8ebf8fac6d5b.svg",
-    "main.9ee92fe0.css.map": "/gid-group/static/css/main.9ee92fe0.css.map",
-    "main.7f34870e.js.map": "/gid-group/static/js/main.7f34870e.js.map",
+    "main.60a5f073.css.map": "/gid-group/static/css/main.60a5f073.css.map",
+    "main.a1c014d9.js.map": "/gid-group/static/js/main.a1c014d9.js.map",
     "787.296da6e0.chunk.js.map": "/gid-group/static/js/787.296da6e0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ee92fe0.css",
-    "static/js/main.7f34870e.js"
+    "static/css/main.60a5f073.css",
+    "static/js/main.a1c014d9.js"
   ]
 }
