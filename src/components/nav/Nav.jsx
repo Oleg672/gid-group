@@ -13,7 +13,7 @@ function Nav({ navOpened , setNavOpened }) {
                 <div className='nav__container'>
                     <ul className="nav__list">
                         <NavLink to="/"><li onClick={()=>setNavOpened(!navOpened)} className="nav__item">Главная</li></NavLink>
-                        <li className="nav__item">3D-Дизайн</li>
+                        <NavLink to="/3D-design"> <li onClick={()=>setNavOpened(!navOpened)} className="nav__item">3D-Дизайн</li></NavLink>
                         <li className="nav__item">Ремонт</li>
                         <li className="nav__item">Строительство</li>
                         <NavLink to="/projects"><li onClick={()=>setNavOpened(!navOpened)} className="nav__item">Проекты</li></NavLink>

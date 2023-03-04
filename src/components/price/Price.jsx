@@ -4,12 +4,46 @@ import './price.scss'
 import ss1 from '../../images/ss1.png'
 import ss2 from '../../images/ss2.png'
 import ss3 from '../../images/ss3.png'
+import Logo from '../../images/Logo.png'
+import m1 from '../../images/m1.png'
+import m2 from '../../images/m2.png'
 
 function Price() {
-
+    const style = [
+        {
+            style: "Минимализм",
+            img: "ss1"
+        },
+        {
+            style: "Скандинавский стиль",
+            img: ""
+        },
+        {
+            style: "Стиль Лофт",
+            img: ""
+        },
+        {
+            style: "Минимализм",
+            img: ""
+        },
+        {
+            style: "Скандинавский стиль",
+            img: ""
+        },
+        {
+            style: "Стиль Лофт",
+            img: ""
+        }
+    ]
+    const time = ["Уже нужно", "В течении месяца", "В течении недели", "Более 3-ех месяцев"]
+    const [SVGActive, setSVGActive] = useState("questions__item-1");
+    const [styleActive, setStyleActive] = useState(0);
+    const [timeActive, setTimeActive] = useState(0);
     const [modal, setModal] = useState(false);
     const [questionsSlide, setQuestionsSlide] = useState(0)
     const countSliderItems = (document.querySelectorAll(".questions__content").length) * -100;
+    const SVGActiveFn = (val) => { setSVGActive(val) }
+
     return (
         <section className="price">
             <Modal modal={modal} setModal={setModal}>
@@ -22,90 +56,72 @@ function Price() {
                             </div>
 
                             <ul className="questions__list">
-                                <li className="questions__item">
+                                <li onClick={() => SVGActiveFn("questions__item-1")} className="questions__item questions__item-1" >
                                     <div className="arrow1">
                                         <svg width="340" height="24" viewBox="0 0 340 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.93934 10.9393C0.353553 11.5251 0.353553 12.4749 0.93934 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97918 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.93934 10.9393ZM339.061 13.0606C339.646 12.4748 339.646 11.5251 339.061 10.9393L329.515 1.39337C328.929 0.807583 327.979 0.807583 327.393 1.39337C326.808 1.97916 326.808 2.9289 327.393 3.51469L335.879 12L327.393 20.4853C326.808 21.071 326.808 22.0208 327.393 22.6066C327.979 23.1924 328.929 23.1924 329.515 22.6066L339.061 13.0606ZM2 13.5L338 13.5L338 10.5L2 10.5L2 13.5Z" fill="#FAFF09" />
+                                            <path className={SVGActive === "questions__item-1" ? 'questions__item--active' : 'questions__item--disable'} d="M0.93934 10.9393C0.353553 11.5251 0.353553 12.4749 0.93934 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97918 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.93934 10.9393ZM339.061 13.0606C339.646 12.4748 339.646 11.5251 339.061 10.9393L329.515 1.39337C328.929 0.807583 327.979 0.807583 327.393 1.39337C326.808 1.97916 326.808 2.9289 327.393 3.51469L335.879 12L327.393 20.4853C326.808 21.071 326.808 22.0208 327.393 22.6066C327.979 23.1924 328.929 23.1924 329.515 22.6066L339.061 13.0606ZM2 13.5L338 13.5L338 10.5L2 10.5L2 13.5Z" fill="#4F4F4F" />
                                         </svg>
                                     </div>
                                     <div className="rect__wrapp">
-                                        <div className="rect rect--active">от 50 до 80 м2</div>
+                                        <div className={SVGActive === "questions__item-1" ? 'rect rect--active' : 'rect'}>от 50 до 80 м2</div>
                                         <div className="arrow2">
                                             <svg width="24" height="292" viewBox="0 0 24 292" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M13.0607 0.93934C12.4749 0.353553 11.5251 0.353553 10.9393 0.93934L1.3934 10.4853C0.807612 11.0711 0.807612 12.0208 1.3934 12.6066C1.97919 13.1924 2.92893 13.1924 3.51472 12.6066L12 4.12132L20.4853 12.6066C21.0711 13.1924 22.0208 13.1924 22.6066 12.6066C23.1924 12.0208 23.1924 11.0711 22.6066 10.4853L13.0607 0.93934ZM10.9394 291.061C11.5251 291.646 12.4749 291.646 13.0607 291.061L22.6066 281.515C23.1924 280.929 23.1924 279.979 22.6066 279.393C22.0208 278.808 21.0711 278.808 20.4853 279.393L12 287.879L3.51473 279.393C2.92894 278.808 1.9792 278.808 1.39341 279.393C0.807624 279.979 0.807624 280.929 1.39341 281.515L10.9394 291.061ZM10.5 2L10.5 290L13.5 290L13.5 2L10.5 2Z" fill="#FAFF09" />
+                                                <path className={SVGActive === "questions__item-1" ? 'questions__item--active' : 'questions__item--disable'} d="M13.0607 0.93934C12.4749 0.353553 11.5251 0.353553 10.9393 0.93934L1.3934 10.4853C0.807612 11.0711 0.807612 12.0208 1.3934 12.6066C1.97919 13.1924 2.92893 13.1924 3.51472 12.6066L12 4.12132L20.4853 12.6066C21.0711 13.1924 22.0208 13.1924 22.6066 12.6066C23.1924 12.0208 23.1924 11.0711 22.6066 10.4853L13.0607 0.93934ZM10.9394 291.061C11.5251 291.646 12.4749 291.646 13.0607 291.061L22.6066 281.515C23.1924 280.929 23.1924 279.979 22.6066 279.393C22.0208 278.808 21.0711 278.808 20.4853 279.393L12 287.879L3.51473 279.393C2.92894 278.808 1.9792 278.808 1.39341 279.393C0.807624 279.979 0.807624 280.929 1.39341 281.515L10.9394 291.061ZM10.5 2L10.5 290L13.5 290L13.5 2L10.5 2Z" fill="#4F4F4F" />
                                             </svg>
                                         </div>
                                     </div>
-
                                 </li>
-                                <li className="questions__item">
+                                <li onClick={() => SVGActiveFn("questions__item-2")} className="questions__item questions__item-2" >
                                     <div className="arrow1">
                                         <svg width="340" height="24" viewBox="0 0 340 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.93934 10.9393C0.353553 11.5251 0.353553 12.4749 0.93934 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97918 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.93934 10.9393ZM339.061 13.0606C339.646 12.4748 339.646 11.5251 339.061 10.9393L329.515 1.39337C328.929 0.807583 327.979 0.807583 327.393 1.39337C326.808 1.97916 326.808 2.9289 327.393 3.51469L335.879 12L327.393 20.4853C326.808 21.071 326.808 22.0208 327.393 22.6066C327.979 23.1924 328.929 23.1924 329.515 22.6066L339.061 13.0606ZM2 13.5L338 13.5L338 10.5L2 10.5L2 13.5Z" fill="#4F4F4F" />
+                                            <path className={SVGActive === "questions__item-2" ? 'questions__item--active' : 'questions__item--disable'} d="M0.93934 10.9393C0.353553 11.5251 0.353553 12.4749 0.93934 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97918 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.93934 10.9393ZM339.061 13.0606C339.646 12.4748 339.646 11.5251 339.061 10.9393L329.515 1.39337C328.929 0.807583 327.979 0.807583 327.393 1.39337C326.808 1.97916 326.808 2.9289 327.393 3.51469L335.879 12L327.393 20.4853C326.808 21.071 326.808 22.0208 327.393 22.6066C327.979 23.1924 328.929 23.1924 329.515 22.6066L339.061 13.0606ZM2 13.5L338 13.5L338 10.5L2 10.5L2 13.5Z" fill="#4F4F4F" />
                                         </svg>
-
                                     </div>
                                     <div className="rect__wrapp">
-                                        <div className="rect ">от 80 до 120 м2</div>
+                                        <div className={SVGActive === "questions__item-2" ? 'rect rect--active' : 'rect'}>от 50 до 80 м2</div>
                                         <div className="arrow2">
                                             <svg width="24" height="292" viewBox="0 0 24 292" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M13.0607 0.93934C12.4749 0.353553 11.5251 0.353553 10.9393 0.93934L1.3934 10.4853C0.807612 11.0711 0.807612 12.0208 1.3934 12.6066C1.97919 13.1924 2.92893 13.1924 3.51472 12.6066L12 4.12132L20.4853 12.6066C21.0711 13.1924 22.0208 13.1924 22.6066 12.6066C23.1924 12.0208 23.1924 11.0711 22.6066 10.4853L13.0607 0.93934ZM10.9394 291.061C11.5251 291.646 12.4749 291.646 13.0607 291.061L22.6066 281.515C23.1924 280.929 23.1924 279.979 22.6066 279.393C22.0208 278.808 21.0711 278.808 20.4853 279.393L12 287.879L3.51473 279.393C2.92894 278.808 1.9792 278.808 1.39341 279.393C0.807624 279.979 0.807624 280.929 1.39341 281.515L10.9394 291.061ZM10.5 2L10.5 290L13.5 290L13.5 2L10.5 2Z" fill="#4F4F4F" />
+                                                <path className={SVGActive === "questions__item-2" ? 'questions__item--active' : 'questions__item--disable'} d="M13.0607 0.93934C12.4749 0.353553 11.5251 0.353553 10.9393 0.93934L1.3934 10.4853C0.807612 11.0711 0.807612 12.0208 1.3934 12.6066C1.97919 13.1924 2.92893 13.1924 3.51472 12.6066L12 4.12132L20.4853 12.6066C21.0711 13.1924 22.0208 13.1924 22.6066 12.6066C23.1924 12.0208 23.1924 11.0711 22.6066 10.4853L13.0607 0.93934ZM10.9394 291.061C11.5251 291.646 12.4749 291.646 13.0607 291.061L22.6066 281.515C23.1924 280.929 23.1924 279.979 22.6066 279.393C22.0208 278.808 21.0711 278.808 20.4853 279.393L12 287.879L3.51473 279.393C2.92894 278.808 1.9792 278.808 1.39341 279.393C0.807624 279.979 0.807624 280.929 1.39341 281.515L10.9394 291.061ZM10.5 2L10.5 290L13.5 290L13.5 2L10.5 2Z" fill="#4F4F4F" />
                                             </svg>
-
                                         </div>
                                     </div>
-
                                 </li>
-                                <li className="questions__item">
+                                <li onClick={() => SVGActiveFn("questions__item-3")} className="questions__item questions__item-2" >
                                     <div className="arrow1">
                                         <svg width="340" height="24" viewBox="0 0 340 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.93934 10.9393C0.353553 11.5251 0.353553 12.4749 0.93934 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97918 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.93934 10.9393ZM339.061 13.0606C339.646 12.4748 339.646 11.5251 339.061 10.9393L329.515 1.39337C328.929 0.807583 327.979 0.807583 327.393 1.39337C326.808 1.97916 326.808 2.9289 327.393 3.51469L335.879 12L327.393 20.4853C326.808 21.071 326.808 22.0208 327.393 22.6066C327.979 23.1924 328.929 23.1924 329.515 22.6066L339.061 13.0606ZM2 13.5L338 13.5L338 10.5L2 10.5L2 13.5Z" fill="#4F4F4F" />
+                                            <path className={SVGActive === "questions__item-3" ? 'questions__item--active' : 'questions__item--disable'} d="M0.93934 10.9393C0.353553 11.5251 0.353553 12.4749 0.93934 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97918 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.93934 10.9393ZM339.061 13.0606C339.646 12.4748 339.646 11.5251 339.061 10.9393L329.515 1.39337C328.929 0.807583 327.979 0.807583 327.393 1.39337C326.808 1.97916 326.808 2.9289 327.393 3.51469L335.879 12L327.393 20.4853C326.808 21.071 326.808 22.0208 327.393 22.6066C327.979 23.1924 328.929 23.1924 329.515 22.6066L339.061 13.0606ZM2 13.5L338 13.5L338 10.5L2 10.5L2 13.5Z" fill="#4F4F4F" />
                                         </svg>
-
                                     </div>
                                     <div className="rect__wrapp">
-                                        <div className="rect">более 120 м2</div>
+                                        <div className={SVGActive === "questions__item-3" ? 'rect rect--active' : 'rect'}>более 120 м2</div>
                                         <div className="arrow2">
                                             <svg width="24" height="292" viewBox="0 0 24 292" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M13.0607 0.93934C12.4749 0.353553 11.5251 0.353553 10.9393 0.93934L1.3934 10.4853C0.807612 11.0711 0.807612 12.0208 1.3934 12.6066C1.97919 13.1924 2.92893 13.1924 3.51472 12.6066L12 4.12132L20.4853 12.6066C21.0711 13.1924 22.0208 13.1924 22.6066 12.6066C23.1924 12.0208 23.1924 11.0711 22.6066 10.4853L13.0607 0.93934ZM10.9394 291.061C11.5251 291.646 12.4749 291.646 13.0607 291.061L22.6066 281.515C23.1924 280.929 23.1924 279.979 22.6066 279.393C22.0208 278.808 21.0711 278.808 20.4853 279.393L12 287.879L3.51473 279.393C2.92894 278.808 1.9792 278.808 1.39341 279.393C0.807624 279.979 0.807624 280.929 1.39341 281.515L10.9394 291.061ZM10.5 2L10.5 290L13.5 290L13.5 2L10.5 2Z" fill="#4F4F4F" />
+                                                <path className={SVGActive === "questions__item-3" ? 'questions__item--active' : 'questions__item--disable'} d="M13.0607 0.93934C12.4749 0.353553 11.5251 0.353553 10.9393 0.93934L1.3934 10.4853C0.807612 11.0711 0.807612 12.0208 1.3934 12.6066C1.97919 13.1924 2.92893 13.1924 3.51472 12.6066L12 4.12132L20.4853 12.6066C21.0711 13.1924 22.0208 13.1924 22.6066 12.6066C23.1924 12.0208 23.1924 11.0711 22.6066 10.4853L13.0607 0.93934ZM10.9394 291.061C11.5251 291.646 12.4749 291.646 13.0607 291.061L22.6066 281.515C23.1924 280.929 23.1924 279.979 22.6066 279.393C22.0208 278.808 21.0711 278.808 20.4853 279.393L12 287.879L3.51473 279.393C2.92894 278.808 1.9792 278.808 1.39341 279.393C0.807624 279.979 0.807624 280.929 1.39341 281.515L10.9394 291.061ZM10.5 2L10.5 290L13.5 290L13.5 2L10.5 2Z" fill="#4F4F4F" />
                                             </svg>
-
                                         </div>
                                     </div>
-
                                 </li>
+
                             </ul>
                         </div>
+
                         <div className="questions__content">
                             <div className="questions__header">
                                 <h6 className="questions__title">Вопрос 2:</h6>
                                 <span className="questions__text">Какой стиль лучше подходит для вашего проекта?</span>
                             </div>
                             <ul className="questions-style__list">
-                                <li className="questions-style__item">
-                                    <img src={ss1} alt="стиль" className="questions-style__img" />
-                                    <h6 className="questions-style__title">Минимализм</h6>
-                                </li>
-                                <li className="questions-style__item">
-                                    <img src={ss2} alt="стиль" className="questions-style__img" />
-                                    <h6 className="questions-style__title">Минимализм</h6>
-                                </li>
-                                <li className="questions-style__item">
-                                    <img src={ss3} alt="стиль" className="questions-style__img" />
-                                    <h6 className="questions-style__title">Минимализм</h6>
-                                </li>
-                                <li className="questions-style__item">
-                                    <img src={ss1} alt="стиль" className="questions-style__img" />
-                                    <h6 className="questions-style__title">Минимализм</h6>
-                                </li>
-                                <li className="questions-style__item">
-                                    <img src={ss2} alt="стиль" className="questions-style__img" />
-                                    <h6 className="questions-style__title">Минимализм</h6>
-                                </li>
-                                <li className="questions-style__item">
-                                    <img src={ss3} alt="стиль" className="questions-style__img" />
-                                    <h6 className="questions-style__title">Минимализм</h6>
-                                </li>
+                                {style.map((el, index) => {
+                                    return (
+                                        <li key={index} onClick={() => { setStyleActive(index) }} className={styleActive == index ? "questions-style__item questions-style__item--active" : "questions-style__item"}>
+                                            <div className="questions-style__img-wrapper">
+                                                {/* import ss2,ss3 */}
+                                                <img src={ss1} alt="стиль" className="questions-style__img" />
+                                            </div>
+                                            <h6 className="questions-style__title">{el.style}</h6>
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </div>
                         <div className="questions__content">
@@ -115,18 +131,11 @@ function Price() {
                             </div>
                             <div className="questions-terms__list-wrapp">
                                 <ul className="questions-terms__list">
-                                    <li className="questions-terms__item">
-                                        <span className="questions-terms-span">Уже нужно</span>
-                                    </li>
-                                    <li className="questions-terms__item">
-                                        <span className="questions-terms-span">В течении месяца</span>
-                                    </li>
-                                    <li className="questions-terms__item">
-                                        <span className="questions-terms-span">В течении недели</span>
-                                    </li>
-                                    <li className="questions-terms__item">
-                                        <span className="questions-terms-span">Более 3-ех месяцев</span>
-                                    </li>
+                                    {time.map((el, index) => {
+                                        return (<li onClick={() => setTimeActive(index)} key={index} className={timeActive == index ? "questions-terms__item questions-terms__item--active" : "questions-terms__item"}>
+                                            <span className="questions-terms-span">{el}</span>
+                                        </li>)
+                                    })}
 
                                 </ul>
                             </div>
@@ -151,7 +160,24 @@ function Price() {
                                         </div>
                                         <button className='questions__end-btn'>Оставить заявку</button>
                                     </div>
-
+                                    <div className="questions__end-links">
+                                        <div className="questions__itemList">
+                                            <div className="questions__itemList-inner">
+                                                <img className='questions__itemList-img' src={m1} alt="Каталог работ" />
+                                                <img className='questions__itemList-logo' src={Logo} alt="Каталог работ" />
+                                                <hp className='questions__itemList-desc' >Каталог работ</hp>
+                                            </div>
+                                            <h6 className='questions__itemList-title' >Каталог работ</h6>
+                                        </div>
+                                        <div className="questions__itemList">
+                                            <div className="questions__itemList-inner">
+                                                <img className='questions__itemList-img' src={m2} alt="Каталог работ" />
+                                                <img className='questions__itemList-logo' src={Logo} alt="Каталог работ" />
+                                                <hp className='questions__itemList-desc' >Журанал дизайна</hp>
+                                            </div>
+                                            <h6 className='questions__itemList-title' >Журанал дизайна</h6>
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>

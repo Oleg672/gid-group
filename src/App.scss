@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@300;400;500;700;900&display=swap');
 
 * {
   margin: 0;
@@ -65,4 +66,75 @@ body {
   width: fit-content;
   position: relative;
 
+}
+.e-mail__container {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.input_e-mail {
+  padding: 30px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 28px;
+  color: #4F4F4F;
+}
+
+.input_e-mail__personal {
+  opacity: 0;
+  display: none;
+
+}
+
+.input_e-mail__personal~label::before {
+  content: '';
+  display: block;
+  height: 17px;
+  width: 17px;
+  left: -5px;
+  top: 0;
+  background-color: white;
+  border: 1px solid black;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+
+}
+
+.input_e-mail__personal:checked~label::before {
+  content: url('./images/checked.svg');
+  background-color: white;
+  border: 1px solid black;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.input_e-mail__personal-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 147.69%;
+  color: #000000;
+  margin-left: 6px;
+  cursor: pointer;
+
+  a {
+    text-decoration-line: underline;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 147.69%;
+    color: #000000;
+  }
 }
