@@ -1,0 +1,32 @@
+.filter {
+    margin: 28px auto;
+    max-width: 914px;
+    &__list {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__item {
+        background-color: #F2F2F2;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        color: #4F4F4F;
+        width: 210px;
+        height: 60px;
+        text-align: center;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        cursor: pointer;
+        border:2px solid #F2F2F2;
+        &:hover{
+            border:2px solid #FAFF09;
+        }
+    }
+}

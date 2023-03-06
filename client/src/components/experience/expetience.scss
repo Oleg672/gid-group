@@ -1,0 +1,161 @@
+
+.experience {
+    margin: 45px 40px;
+    display: block;
+    background-color: #F2F2F2;
+    position: relative;
+    padding: 30px 100px;
+  
+    &__list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      list-style-type: none;
+      position: relative;
+    }
+  
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+  
+    &__item {
+      max-width: 360px;
+      min-width: 350px;
+      padding: 10px;
+    }
+  
+    &__title {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 75px;
+      color: #0E0E0E;
+    }
+  
+    &__item-inner {
+      margin-left: 25px;
+  
+    }
+  
+    &__sub-title {
+      position: relative;
+      margin-top: 7px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 33px;
+      color: #0E0E0E;
+    }
+  
+    &__sub-title::after {
+      content: '';
+      position: absolute;
+      display: block;
+      left: -25px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background-color: #0E0E0E;
+  
+    }
+  
+    &__desc {
+      margin-top: 16px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 21px;
+      color: #0E0E0E;
+    }
+  }
+@media screen and (max-width: 1900px) {
+    .experience {
+        padding: 12px 10px;
+    }
+}
+
+@media screen and (max-width: 1550px) {
+    .experience {
+        &__list {
+            flex-direction: column;
+        }
+
+        .wrapper {
+            align-items: center;
+            width: 100%;
+        }
+
+        &__title {
+            font-size: 48px;
+        }
+
+        &__sub-title {
+            font-size: 24px;
+        }
+
+        &__desc {
+            font-size: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 834px) {
+    .experience {
+        padding: 12px 16px;
+
+        &__item {
+            max-width: 350px;
+            min-width: 330px;
+        }
+
+
+
+        &__title {
+            font-size: 48px;
+        }
+
+        &__sub-title {
+            font-size: 24px;
+        }
+
+        &__desc {
+            font-size: 14px;
+        }
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .experience {
+        margin: 10px;
+
+        .wrapper {
+            text-align: center;
+        }
+
+        &__item {
+            min-width: 330px;
+        }
+
+        &__list {
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        &__sub-title::after {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 754px) {
+    .wrapper {
+        flex-direction: column;
+    }
+}

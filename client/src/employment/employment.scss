@@ -1,0 +1,59 @@
+.employment {
+    padding-top: 102px;
+    padding-bottom: 142px;
+
+    &__container {
+        margin: 0 auto;
+        max-width: 1500px;
+    }
+
+    &__text-title {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 146.69%;
+        color: #000000;
+        margin-top: 102px;
+    }
+
+    &__list {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 100px;
+    }
+
+    &__item {
+        max-width: 450px;
+        position: relative;
+        &::before{
+            content: '';
+            display: block;
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background-color: #333333;
+            margin-bottom: 18px;
+        }
+    }
+
+    &__title {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 146.69%;
+        color: #333333;
+    }
+
+    &__text {
+        margin-top: 35px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 146.69%;
+        color: #4F4F4F;
+    }
+}

@@ -1,0 +1,78 @@
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 1080px;
+    height: 100vh;
+    background-image: url(../../images/top11.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+  
+  
+  
+    &__fullImg {
+      width: 100%;
+    }
+  
+    &__title {
+      position: relative;
+      top: 45%;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 80px;
+      line-height: 94px;
+      text-align: center;
+      color: #F2F2F2;
+    }
+  
+    &__ContainerBTN {
+      position: relative;
+      margin: 0 auto;
+      top: 62%;
+      text-align: center;
+    }
+  
+    .btn_home:hover {
+      background: rgba(17, 17, 17, 0.9);
+  
+    }
+  
+    .btn_home {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      max-width: 348px;
+      width: 100%;
+      margin: 0 25px;
+      background: rgba(17, 17, 17, 0.6);
+      border: 1px solid #C4C4C4;
+      cursor: pointer;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+      color: #FFFFFF;
+  
+    }
+  }
+
+@media screen and (max-width: 650px) {
+    .home {
+        &__logo {
+            margin-top: 150px;
+        }
+
+        &__title {
+            font-weight: 300;
+            font-size: 36px;
+            line-height: 42px;
+            text-align: center;
+            color: #F2F2F2;
+        }
+        .btn_home {
+            margin-bottom: 26px;
+        }
+    }    
+}

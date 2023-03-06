@@ -1,0 +1,31 @@
+.result {
+    &__list {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        background-color: #F5F5F5;
+
+        padding: 30px 50px;
+        max-width: 2200px;
+        margin: 81px auto;
+    }
+&__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    &__img {
+        width: 125px;
+        height: 125px;
+    }
+
+    &__title {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 147.69%;
+        color: #000000;
+    }
+
+}
