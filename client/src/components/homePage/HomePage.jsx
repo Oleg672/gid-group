@@ -11,37 +11,24 @@ import Home from '../../components/home/Home';
 
 function HomePage({ projects, setNavOpened }) {
     const [workMap, setWorkMap] = useState();
+    const [experienceData, setExperienceData] = useState();
     const [instagram, setInstagram] = useState();
-    const experienceData = [
-        {
-            title:"100+",
-            titleImg:"",
-            subTitle:"Реализованные проекты",
-            desc:"Работаем с любой недвижимостью – от дворцов до квартир"
-        },
-        {
-            title:"10 лет",
-            titleImg:"",
-            subTitle:"Безупречная репутация",
-            desc:"Наши специалисты постоянно стажируются у лидеров строительных работ"
-        },
-        {
-            title:"3 года",
-            titleImg:"",
-            subTitle:"Гарантии на все работы",
-            desc:"Мы внимательно изучаем рынок отделочных материалов и инновационной техники"
-        },
-        {
-            title:"Сроки",
-            titleImg:"",
-            subTitle:"Процесс",
-            desc:"Нужно лучшее – закажи это у лучших!"
-        },
-    ]
-
 
     useEffect(() => {
-        fetch("http://localhost:3001/workMap")
+        fetch("/experience")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setExperienceData(result)
+
+                },
+                (error) => {
+                    console.log(error)
+                }
+            )
+    }, []);
+    useEffect(() => {
+        fetch("/workMap")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -54,7 +41,7 @@ function HomePage({ projects, setNavOpened }) {
             )
     }, []);
     useEffect(() => {
-        fetch("http://localhost:3001/instagram")
+        fetch("/instagram")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -69,7 +56,7 @@ function HomePage({ projects, setNavOpened }) {
     return (
         <>
             <Home />
-            <Expetience experienceData={experienceData}/>
+            {experienceData?<Expetience experienceData={experienceData}/>:null}
             <Price setNavOpened={setNavOpened}/>
             <Services />
             {projects ? <Projects projects={projects} /> : null}

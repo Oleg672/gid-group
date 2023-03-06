@@ -17,12 +17,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"react-scripts start\"",
+    "start": "react-scripts start",
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server -w server/db.json -p 3001",
     "predeploy": "npm run build",
     "deploy": "gh-pages-clean gh-pages -d build",
     "deploy2": "gh-pages -d build"
@@ -48,5 +47,6 @@
   "devDependencies": {
     "gh-pages": "^5.0.0",
     "sass": "^1.58.3"
-  }
+  },
+  "proxy":"http://localhost:5001"
 }

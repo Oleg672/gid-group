@@ -15,19 +15,8 @@ function App() {
   const [projects, setProjects] = useState();
   const [modal, setModal] = useState(false);
 
-  function addProjects(value) {
-    return setProjects(value);
-  }
-  // function scrollToTop(){
-  //  return window.scrollTo({
-  //     top: 0,
-  //     left: 0,
-  //     behavior: 'smooth',
-  //   });
-  // }
-  // }
   useEffect(() => {
-    fetch("http://localhost:3001/projects")
+    fetch("/projects")
       .then(res => res.json())
       .then(
         (result) => {
